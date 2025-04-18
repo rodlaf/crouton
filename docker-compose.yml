@@ -1,0 +1,13 @@
+services:
+  crouton:
+    image: rodlaf/crouton:1.8
+    container_name: crouton-server
+    build: .
+    ports:
+      - "1234:80"
+    volumes:
+      - data:/app/data
+    restart: unless-stopped
+
+volumes:
+  data:
